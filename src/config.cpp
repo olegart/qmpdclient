@@ -1,5 +1,5 @@
 /*
- * QMPDClient - An MPD client written in Qt 4.
+ * QMPDClient - An MPD client written in Qt 5.
  * Copyright (C) 2005-2008 Håvard Tautra Knutsen <havtknut@tihlde.org>
  *
  * This program is free software; you can redistribute it and/or
@@ -31,7 +31,7 @@
 Config* Config::m_instance = 0;
 
 Config::Config() :
-#ifndef Q_WS_X11
+#ifndef HAVE_X11
 		QSettings(IniFormat, UserScope, "QMPDClient", "QMPDClient") {
 #else
 		QSettings("QMPDClient", "QMPDClient") {
@@ -41,7 +41,7 @@ Config::Config() :
 
 	// Path for system wide, and user's data files
 	QString execPath = QCoreApplication::applicationDirPath();
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
 	m_systemPath = execPath + "/";
 	m_userPath = m_cachePath;
 #else
@@ -453,6 +453,19 @@ void Config::setStartHidden(bool e) {
 	setValue("/trayicon/starthidden", e);
 }
 
+void Config::setAutoStart(bool e) {
+	setValue("/trayicon/autostart", e);
+    #ifdef Q_OS_WIN
+        QSettings winRegistry("HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",QSettings::NativeFormat);
+        if (e) {
+            winRegistry.setValue("QMPDClient", QCoreApplication::applicationFilePath().replace("/","\\"));
+        }
+        else {
+            winRegistry.remove("QMPDClient");
+        }
+    #endif
+}
+
 bool Config::trayIconEnabled() const {
 	return value("/trayicon/enable", true).toBool();
 }
@@ -467,6 +480,10 @@ bool Config::minimizeToTray() const {
 
 bool Config::startHidden() const {
 	return value("/trayicon/starthidden").toBool();
+}
+
+bool Config::autoStart() const {
+	return value("/trayicon/autostart").toBool();
 }
 
 /*

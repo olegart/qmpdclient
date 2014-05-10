@@ -1,5 +1,5 @@
 /*
- * QMPDClient - An MPD client written in Qt 4.
+ * QMPDClient - An MPD client written in Qt 5.
  * Copyright (C) 2005-2008 Håvard Tautra Knutsen <havtknut@tihlde.org>
  *
  * This program is free software; you can redistribute it and/or
@@ -129,9 +129,9 @@ void PreferencesDialog::initCategoryList() {
 }
 
 void PreferencesDialog::initConnectionPage() {
-	serverList->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
+    serverList->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 	serverList->verticalHeader()->setDefaultSectionSize(fontMetrics().height());
-	serverList->verticalHeader()->setResizeMode(QHeaderView::Fixed);
+    serverList->verticalHeader()->setSectionResizeMode(QHeaderView::Fixed);
 	serverList->verticalHeader()->hide();
 
 	serverList->setModel(d->serverModel = new ServerModel(this));
@@ -388,9 +388,9 @@ void PreferencesDialog::initNotificationsPage() {
 }
 
 void PreferencesDialog::initShortcutPage() {
-	shortcutList->horizontalHeader()->setResizeMode(QHeaderView::Stretch);
+    shortcutList->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
 	shortcutList->verticalHeader()->setDefaultSectionSize(fontMetrics().height());
-	shortcutList->verticalHeader()->setResizeMode(QHeaderView::Fixed);
+    shortcutList->verticalHeader()->setSectionResizeMode(QHeaderView::Fixed);
 	shortcutList->verticalHeader()->hide();
 
 	ShortcutModel *model = new ShortcutModel(this);
@@ -408,13 +408,19 @@ void PreferencesDialog::initTagGuesserPage() {
 void PreferencesDialog::initTrayIconPage() {
 	trayIconCheck->setChecked(Config::instance()->trayIconEnabled());
 	startHiddenCheck->setChecked(Config::instance()->startHidden());
+    autoStartCheck->setChecked(Config::instance()->autoStart());
 	minToTrayCheck->setChecked(Config::instance()->minimizeToTray());
 	songInfoCheck->setChecked(Config::instance()->extendedSongInfoEnabled());
 
 	connect(trayIconCheck, SIGNAL(toggled(bool)), Config::instance(), SLOT(setTrayIconEnabled(bool)));
 	connect(minToTrayCheck, SIGNAL(toggled(bool)), Config::instance(), SLOT(setMinimizeToTray(bool)));
 	connect(startHiddenCheck, SIGNAL(toggled(bool)), Config::instance(), SLOT(setStartHidden(bool)));
+	connect(autoStartCheck, SIGNAL(toggled(bool)), Config::instance(), SLOT(setAutoStart(bool)));
 	connect(songInfoCheck, SIGNAL(toggled(bool)), Config::instance(), SLOT(setExtendedSongInfoEnabled(bool)));
+
+#ifndef Q_OS_WIN
+    autoStartCheck->hide();
+#endif
 }
 
 void PreferencesDialog::initLastFmPage() {
@@ -664,7 +670,7 @@ void PreferencesDialog::styleChanged(QListWidgetItem *i) {
 
 void PreferencesDialog::hashLastFmPassword() {
 	lastFmMd5PasswordRadio->setChecked(true);
-	lastFmPasswordEdit->setText(QCryptographicHash::hash(lastFmPasswordEdit->text().toAscii(), QCryptographicHash::Md5).toHex());
+    lastFmPasswordEdit->setText(QCryptographicHash::hash(lastFmPasswordEdit->text().toLatin1(), QCryptographicHash::Md5).toHex());
 }
 
 void PreferencesDialog::setLastFmSlider(int value) {

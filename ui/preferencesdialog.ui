@@ -1644,6 +1644,13 @@
                </widget>
               </item>
               <item>
+               <widget class="QCheckBox" name="autoStartCheck">
+                <property name="text">
+                 <string>Run when Windows starts</string>
+                </property>
+               </widget>
+              </item>
+              <item>
                <widget class="QCheckBox" name="songInfoCheck">
                 <property name="text">
                  <string>Enable extended song info</string>

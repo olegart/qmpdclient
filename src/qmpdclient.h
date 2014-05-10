@@ -1,5 +1,5 @@
 /*
- * QMPDClient - An MPD client written in Qt 4.
+ * QMPDClient - An MPD client written in Qt 5.
  * Copyright (C) 2005-2008 Håvard Tautra Knutsen <havtknut@tihlde.org>
  *
  * This program is free software; you can redistribute it and/or
@@ -24,6 +24,10 @@
 #include <QPointer>
 #include <QSessionManager>
 
+#ifdef Q_OS_LINUX
+    #include <QX11Info>
+#endif
+
 class MainWindow;
 class QTranslator;
 
@@ -32,12 +36,12 @@ class QMPDClient : public QApplication {
 public:
 	QMPDClient(int &, char **);
 	~QMPDClient();
-#ifdef Q_WS_X11
-	bool x11EventFilter(XEvent *);
-#else
-	bool eventFilter(QObject *, QEvent *);
+
+    bool eventFilter(QObject *, QEvent *);
+#ifdef Q_OS_LINUX
+    bool x11EventFilter(void *);
 #endif
-#ifdef Q_WS_WIN
+#ifdef Q_OS_WIN
 	bool winEventFilter(MSG *, long *);
 #endif
 	void commitData(QSessionManager & manager);

@@ -1,5 +1,5 @@
 /*
- * QMPDClient - An MPD client written in Qt 4.
+ * QMPDClient - An MPD client written in Qt 5.
  * Copyright (C) 2005-2008 Håvard Tautra Knutsen <havtknut@tihlde.org>
  *
  * This program is free software; you can redistribute it and/or
@@ -77,7 +77,7 @@ void RadioView::newStation() {
 void RadioView::connected() {
 	Q_ASSERT(m_model);
 	m_model->setSongs(Config::instance()->radioStations());
-	if (header()->isClickable())
+    if (header()->sectionsClickable())
 		m_model->sort(header()->sortIndicatorSection(), header()->sortIndicatorOrder());
 	emit toggleNewAction(true);
 }

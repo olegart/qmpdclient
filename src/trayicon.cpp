@@ -1,5 +1,5 @@
 /*
- * QMPDClient - An MPD client written in Qt 4.
+ * QMPDClient - An MPD client written in Qt 5.
  * Copyright (C) 2005-2008 Håvard Tautra Knutsen <havtknut@tihlde.org>
  *
  * This program is free software; you can redistribute it and/or
@@ -32,7 +32,7 @@
 #include <QSlider>
 #include <QWheelEvent>
 #include <QDesktopWidget>
-#ifndef Q_WS_X11
+#ifndef HAVE_X11
 #include "macroexpander.h"
 #endif
 
@@ -70,7 +70,7 @@ private:
 
 
 TrayIcon::TrayIcon(QWidget *parent) : QSystemTrayIcon(parent),
-#ifndef Q_WS_X11
+#ifndef HAVE_X11
 		m_connected(":/icons/16x16/qmpdclient.png"),
 		m_disconnected(":/icons/16x16/qmpdclientd.png")
 #else
@@ -156,7 +156,7 @@ void TrayIcon::setSong(const MPDSong &s) {
 
 	if (s.isNull()) {
 		QString msg = tr("Not playing", "This is for the trayicon tooltip, indicating that no song is playing");
-#ifndef Q_WS_X11
+#ifndef HAVE_X11
 		// Win32 and OSX does not seem to support richtext in tooltips
 		setToolTip(msg);
 #else
@@ -170,7 +170,7 @@ void TrayIcon::setSong(const MPDSong &s) {
 		return;
 	}
 
-#ifndef Q_WS_X11
+#ifndef HAVE_X11
 	// Win32 and OSX does not seem to support richtext in tooltips
 	setToolTip(expandMacros(s, Config::instance()->playlistPattern()));
 #else

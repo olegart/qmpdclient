@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ru">
+<TS version="2.1" language="ru_RU">
 <context>
     <name>AboutDialog</name>
     <message>
@@ -157,17 +157,21 @@
         <source>Lyrics</source>
         <translation>Текст</translation>
     </message>
+    <message>
+        <source>Scrobble</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DirectoryPanel</name>
     <message>
         <source>&amp;Filter:</source>
-        <translation>&amp;Фильтр:</translation>
+        <translation type="vanished">&amp;Фильтр:</translation>
     </message>
     <message>
         <source>&amp;Filter:</source>
         <comment>Filter directory contents</comment>
-        <translation type="obsolete">&amp;Выбрать:</translation>
+        <translation type="unfinished">&amp;Выбрать:</translation>
     </message>
 </context>
 <context>
@@ -193,19 +197,19 @@
     <name>JumpToSongDialog</name>
     <message>
         <source>Jump to song</source>
-        <translation>Переход на песню</translation>
+        <translation type="vanished">Переход на песню</translation>
     </message>
     <message>
         <source>&amp;Filter:</source>
-        <translation>&amp;Фильтр:</translation>
+        <translation type="vanished">&amp;Фильтр:</translation>
     </message>
     <message>
         <source>&amp;Jump</source>
-        <translation>&amp;Переход</translation>
+        <translation type="vanished">&amp;Переход</translation>
     </message>
     <message>
         <source>&amp;Cancel</source>
-        <translation>&amp;Отмена</translation>
+        <translation type="vanished">&amp;Отмена</translation>
     </message>
 </context>
 <context>
@@ -307,7 +311,7 @@
     <name>MPDConnection</name>
     <message>
         <source>Could not connect to server</source>
-        <translation>Невозможно соединиться с сервером</translation>
+        <translation type="vanished">Невозможно соединиться с сервером</translation>
     </message>
     <message>
         <source>Authentication failed</source>
@@ -320,6 +324,10 @@
     <message>
         <source>Could not connect to server </source>
         <translation type="obsolete">Невозможно соединиться с сервером </translation>
+    </message>
+    <message>
+        <source>Could not connect to server %1:%2</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -369,27 +377,27 @@
     </message>
     <message>
         <source>artists</source>
-        <translation>исполнителей</translation>
+        <translation type="vanished">исполнителей</translation>
     </message>
     <message>
         <source>albums</source>
-        <translation>альбомов</translation>
+        <translation type="vanished">альбомов</translation>
     </message>
     <message>
         <source>songs</source>
-        <translation>песен</translation>
+        <translation type="vanished">песен</translation>
     </message>
     <message>
         <source>days</source>
-        <translation>дней</translation>
+        <translation type="vanished">дней</translation>
     </message>
     <message>
         <source>hours</source>
-        <translation>часов</translation>
+        <translation type="vanished">часов</translation>
     </message>
     <message>
         <source>minutes</source>
-        <translation>минут</translation>
+        <translation type="vanished">минут</translation>
     </message>
     <message>
         <source>Reading library</source>
@@ -557,7 +565,7 @@
     </message>
     <message>
         <source>Library:  %1 %2, %3 %4, %5 %6. (%7 %8 %9 %10 %11 %12) </source>
-        <translation>Библиотека: %1 %2, %3 %4, %5 %6. (%7 %8 %9 %10 %11 %12) </translation>
+        <translation type="vanished">Библиотека: %1 %2, %3 %4, %5 %6. (%7 %8 %9 %10 %11 %12) </translation>
     </message>
     <message>
         <source>Playlist: </source>
@@ -565,19 +573,107 @@
     </message>
     <message>
         <source>%1 days, </source>
-        <translation>%1 дней, </translation>
+        <translation type="vanished">%1 дней, </translation>
     </message>
     <message>
         <source>%1 hours, </source>
-        <translation>%1 часов, </translation>
+        <translation type="vanished">%1 часов, </translation>
     </message>
     <message>
         <source>%1 minutes, </source>
-        <translation>%1 минут, </translation>
+        <translation type="vanished">%1 минут, </translation>
     </message>
     <message>
         <source>%1 seconds.</source>
-        <translation>%1 секунд.</translation>
+        <translation type="vanished">%1 секунд.</translation>
+    </message>
+    <message>
+        <source>&amp;Shoutcast Directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Library:  %1, %2, %3. (%4 %5 %6 ) </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message numerus="yes">
+        <source>%n artists</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <source>%n albums</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <source>%n songs</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <source>%n days</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <source>%n hours</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <source>%n minutes</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <source>%n days, </source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <source>%n hours, </source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <source>%n minutes, </source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <source>%n seconds.</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
     </message>
 </context>
 <context>
@@ -664,7 +760,7 @@
     </message>
     <message>
         <source>Jump to song...</source>
-        <translation>Перейти к песне...</translation>
+        <translation type="vanished">Перейти к песне...</translation>
     </message>
     <message>
         <source>Shuffle playlist</source>
@@ -690,17 +786,21 @@
         <source>Toggle dynamic playlist</source>
         <translation>Переключить динамический плейлист</translation>
     </message>
+    <message>
+        <source>&amp;Filter:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PlaylistView</name>
     <message>
         <source>J&amp;ump to song...</source>
-        <translation>&amp;Перейти к песне...</translation>
+        <translation type="vanished">&amp;Перейти к песне...</translation>
     </message>
     <message>
         <source>Ctrl+U</source>
         <comment>This is the shortcut for &apos;Jump to song in playlist&apos;</comment>
-        <translation>Ctrl+U</translation>
+        <translation type="vanished">Ctrl+U</translation>
     </message>
     <message>
         <source>&amp;Remove</source>
@@ -780,11 +880,11 @@ Overwrite?</source>
     <name>PlaylistsPanel</name>
     <message>
         <source>Fil&amp;ter:</source>
-        <translation>&amp;Фильтр:</translation>
+        <translation type="vanished">&amp;Фильтр:</translation>
     </message>
     <message>
         <source>&amp;Filter:</source>
-        <translation>&amp;Выбрать:</translation>
+        <translation type="vanished">&amp;Выбрать:</translation>
     </message>
     <message>
         <source>Delete selected playlists</source>
@@ -797,12 +897,12 @@ Overwrite?</source>
     <message>
         <source>Fil&amp;ter:</source>
         <comment>Filter the list of saved playlists</comment>
-        <translation type="obsolete">&amp;Фильтр:</translation>
+        <translation type="unfinished">&amp;Фильтр:</translation>
     </message>
     <message>
         <source>&amp;Filter:</source>
         <comment>Filter the contents of saved playlists</comment>
-        <translation type="obsolete">&amp;Фильтр:</translation>
+        <translation type="unfinished">&amp;Фильтр:</translation>
     </message>
 </context>
 <context>
@@ -1241,7 +1341,7 @@ Overwrite?</source>
     </message>
     <message>
         <source>1024</source>
-        <translation>1024</translation>
+        <translation type="vanished">1024</translation>
     </message>
     <message>
         <source>Max Width:</source>
@@ -1249,7 +1349,7 @@ Overwrite?</source>
     </message>
     <message>
         <source>768</source>
-        <translation>768</translation>
+        <translation type="vanished">768</translation>
     </message>
     <message>
         <source>Overwrite playlist if exist</source>
@@ -1302,6 +1402,42 @@ Overwrite?</source>
     <message>
         <source>Percent of song played:</source>
         <translation>Процентов от песни проиграно:</translation>
+    </message>
+    <message>
+        <source>Save transient settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filename format:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Add whole albums</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Run when Windows starts</source>
+        <translation>Запускать вместе с Windows</translation>
+    </message>
+    <message>
+        <source>Server</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;DejaVu Sans&apos;; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Audioscrobbler endpoint (can be used to scrobble to &lt;a href=&quot;http://libre.fm&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#48ff00;&quot;&gt;libre.fm&lt;/span&gt;&lt;/a&gt; etc)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last.fm</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Libre.fm</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1432,7 +1568,7 @@ Overwrite?</source>
     <name>RadioPanel</name>
     <message>
         <source>&amp;Filter:</source>
-        <translation>&amp;Фильтр:</translation>
+        <translation type="vanished">&amp;Фильтр:</translation>
     </message>
     <message>
         <source>Add new radio station...</source>
@@ -1453,7 +1589,7 @@ Overwrite?</source>
     <message>
         <source>&amp;Filter:</source>
         <comment>Filter radio stations</comment>
-        <translation type="obsolete">&amp;Фильтр:</translation>
+        <translation type="unfinished">&amp;Фильтр:</translation>
     </message>
 </context>
 <context>
@@ -1465,6 +1601,48 @@ Overwrite?</source>
     <message>
         <source>&amp;Delete</source>
         <translation>&amp;Удалить</translation>
+    </message>
+</context>
+<context>
+    <name>ShoutcastModel</name>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished">Название</translation>
+    </message>
+    <message>
+        <source>Bitrate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Listeners</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please wait...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> bps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please wait</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>ShoutcastView</name>
+    <message>
+        <source>&amp;Enqueue</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&amp;Information...</source>
+        <translation type="unfinished">Сведени&amp;я...</translation>
+    </message>
+    <message>
+        <source>&amp;Play</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

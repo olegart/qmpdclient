@@ -2,8 +2,8 @@
 PREFIX = /usr/local
 
 # Most people need not muck about below here
-#!contains(QT_MAJOR_VERSION, 4):error(QMPDClient requires Qt 4)
-CONFIG += qt debug
+# !contains(QT_MAJOR_VERSION, 4):error(QMPDClient requires Qt 4)
+CONFIG += qt5 debug
 
 # addition ldflags for release build
 QMAKE_LFLAGS_RELEASE += -O2 -g0 -s
@@ -11,14 +11,14 @@ QMAKE_LFLAGS_RELEASE += -O2 -g0 -s
 # CONFIG -= debug # Needed to avoid console on win32
 TEMPLATE = app
 RESOURCES = qmpdclient.qrc
-VERSION = 1.2.2
+VERSION = 1.3.1
 DEFINES += NAMEVER='"\\"QMPDClient \
     $$VERSION\\""'
 DEFINES += VERSION='"\\"$$VERSION\\""'
 INCLUDEPATH += src
-QT += network xml xmlpatterns
+QT += network xml xmlpatterns widgets
 
-FORMS += ui/aboutdialog.ui \
+FORMS += \
     ui/addradiodialog.ui \
     ui/controlpanel.ui \
     ui/coverartdialog.ui \
@@ -31,7 +31,8 @@ FORMS += ui/aboutdialog.ui \
     ui/preferencesdialog.ui \
     ui/radiopanel.ui \
     ui/shoutcastpanel.ui \
-    ui/lyricsdialog.ui
+    ui/lyricsdialog.ui \
+    ui/aboutdialog.ui
 
 HEADERS += src/aafilter.h \
     src/aboutdialog.h \
@@ -110,7 +111,7 @@ HEADERS += src/aafilter.h \
     src/timelabel.h \
     src/timeslider.h \
     src/trayicon.h \
-	src/traysonginfo.h \
+    src/traysonginfo.h \
     src/verticalbutton.h \
     src/lastfmsubmitter.h
 
@@ -209,6 +210,8 @@ win32 {
 # Installation in done through own installer on win32
 unix {
     !mac {
+		QT += x11extras
+		DEFINES += HAVE_X11
         SOURCES += src/qmpdclient_x11.cpp
         LIBS += -lX11
         # Check for dbus support

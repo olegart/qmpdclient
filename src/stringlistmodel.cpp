@@ -1,5 +1,5 @@
 /*
- * QMPDClient - An MPD client written in Qt 4.
+ * QMPDClient - An MPD client written in Qt 5.
  * Copyright (C) 2005-2008 Håvard Tautra Knutsen <havtknut@tihlde.org>
  *
  * This program is free software; you can redistribute it and/or
@@ -31,7 +31,8 @@ StringListModel::StringListModel(QObject *parent) : QAbstractListModel(parent),
 
 void StringListModel::setShowAll(bool a) {
 	m_showAll = a;
-	reset();
+    beginResetModel();
+    endResetModel();
 }
 
 bool StringListModel::showAll() const{
@@ -102,7 +103,8 @@ QStringList StringListModel::stringList() const {
 
 void StringListModel::setStringList(const QStringList &strings) {
 	m_list = strings;
-	reset();
+    beginResetModel();
+    endResetModel();
 }
 
 int StringListModel::rowCount(const QModelIndex &index) const {

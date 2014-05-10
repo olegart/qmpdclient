@@ -1,5 +1,5 @@
 /*
- * QMPDClient - An MPD client written in Qt 4.
+ * QMPDClient - An MPD client written in Qt 5.
  * Copyright (C) 2005-2008 Håvard Tautra Knutsen <havtknut@tihlde.org>
  *
  * This program is free software; you can redistribute it and/or
@@ -85,6 +85,7 @@ public:
 	// Tray icon
 	bool minimizeToTray() const;
 	bool startHidden() const;
+	bool autoStart() const;
 	bool trayIconEnabled() const;
 	bool extendedSongInfoEnabled() const;
 
@@ -183,6 +184,7 @@ public slots:
 	// Tray icon
 	void setMinimizeToTray(bool);
 	void setStartHidden(bool);
+	void setAutoStart(bool);
 	void setTrayIconEnabled(bool);
 	void setExtendedSongInfoEnabled(bool);
 

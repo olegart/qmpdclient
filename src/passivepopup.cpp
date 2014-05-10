@@ -1,5 +1,5 @@
 /*
- * QMPDClient - An MPD client written in Qt 4.
+ * QMPDClient - An MPD client written in Qt 5.
  * Copyright (C) 2005-2008 Håvard Tautra Knutsen <havtknut@tihlde.org>
  *
  * This program is free software; you can redistribute it and/or
@@ -29,7 +29,7 @@ QPointer<PassivePopup> PassivePopup::visible;
 
 PassivePopup::PassivePopup(const QString &caption, const QString &text, const QPixmap &pixmap,
         PassivePopup::Position pos, int timeout) : QFrame(0, Qt::X11BypassWindowManagerHint
-#ifndef Q_WS_X11
+#ifndef HAVE_X11
 	| Qt::SplashScreen
 #endif
 | Qt::WindowStaysOnTopHint) {

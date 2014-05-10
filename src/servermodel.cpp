@@ -1,5 +1,5 @@
 /*
- * QMPDClient - An MPD client written in Qt 4.
+ * QMPDClient - An MPD client written in Qt 5.
  * Copyright (C) 2005-2008 Håvard Tautra Knutsen <havtknut@tihlde.org>
  *
  * This program is free software; you can redistribute it and/or
@@ -113,7 +113,8 @@ int ServerModel::rowCount(const QModelIndex &index) const {
 void ServerModel::addServer() {
 	m_servers << ServerInfo("New server");
 	Config::instance()->setServers(m_servers);
-	reset();
+    beginResetModel();
+    endResetModel();
 }
 
 int ServerModel::size() const {
@@ -125,7 +126,8 @@ void ServerModel::deleteServer(const QModelIndex &in) {
 		return;
 	m_servers.removeAt(in.row());
 	Config::instance()->setServers(m_servers);
-	reset();
+    beginResetModel();
+    endResetModel();
 }
 
 bool ServerModel::moveUp(const QModelIndex &idx) {

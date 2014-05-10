@@ -1,5 +1,5 @@
 /*
- * QMPDClient - An MPDCache client written in Qt 4.
+ * QMPDClient - An MPDCache client written in Qt 5.
  * Copyright (C) 2005-2008 Håvard Tautra Knutsen <havtknut@tihlde.org>
  *
  * This program is free software; you can redistribute it and/or
@@ -270,7 +270,7 @@ void MPDCache::deletePlaylist(const QString &playlistName) {
 
 	mpd_beginList();
 	foreach(MPDSong s, d->playlistMap.keys()) {
-		mpd_call(MPDCache::deletePlaylists, Rm, playlistName.toAscii());
+        mpd_call(MPDCache::deletePlaylists, Rm, playlistName.toLatin1());
 	}
 
 	mpd_endList();

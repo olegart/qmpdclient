@@ -1,5 +1,5 @@
 /*
- * QMPDClient - An MPD client written in Qt 4.
+ * QMPDClient - An MPD client written in Qt 5.
  * Copyright (C) 2009 Voker57 <voker57@gmail.com>
  *
  * This program is free software; you can redistribute it and/or

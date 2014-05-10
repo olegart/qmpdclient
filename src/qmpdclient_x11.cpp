@@ -1,5 +1,5 @@
 /*
- * QMPDClient - An MPD client written in Qt 4.
+ * QMPDClient - An MPD client written in Qt 5.
  * Copyright (C) 2005-2008 Håvard Tautra Knutsen <havtknut@tihlde.org>
  *
  * This program is free software; you can redistribute it and/or
@@ -70,11 +70,11 @@ void QMPDClient::ungrabKeys() {
 	XUngrabKey(dpy, XF86AUDIO_VOLDN, 0, rootWindowId);
 }
 
-bool QMPDClient::x11EventFilter(XEvent *xevent) {
+bool QMPDClient::x11EventFilter(void *xevent) {
 	Q_ASSERT(m_mainWindow);
 	XKeyEvent *keyevent = (XKeyEvent *)xevent;
 
-	if (xevent->type != KeyRelease)
+    if (keyevent->type != KeyRelease)
 		return false;
 
 	switch (keyevent->keycode) {

@@ -1,5 +1,5 @@
 /*
- * QMPDClient - An MPD client written in Qt 4.
+ * QMPDClient - An MPD client written in Qt 5.
  * Copyright (C) 2005-2008 Håvard Tautra Knutsen <havtknut@tihlde.org>
  *
  * This program is free software; you can redistribute it and/or
@@ -145,7 +145,8 @@ QModelIndex DirectoryModel::createIndex(int row, int col, const MPDDirectory &di
 
 void DirectoryModel::setRoot(const MPDDirectory &root) {
 	m_root = root;
-	reset();
+    beginResetModel();
+    endResetModel();
 }
 
 QStringList DirectoryModel::mimeTypes() const {

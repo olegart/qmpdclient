@@ -1,5 +1,5 @@
 /*
- * QMPDClient - An MPD client written in Qt 4.
+ * QMPDClient - An MPD client written in Qt 5.
  * Copyright (C) 2005-2008 Håvard Tautra Knutsen <havtknut@tihlde.org>
  *
  * This program is free software; you can redistribute it and/or
@@ -43,6 +43,7 @@ QMPDClient::QMPDClient(int &argc, char **argv) : QApplication(argc, argv),
 		m_mainWindow(0),
 		m_translator(0),
 		m_qtTranslator(0) {
+	
 	setObjectName("qmpdclient");
 	setApplicationName("QMPDClient");
 	setOrganizationName("QMPDClient");
@@ -189,7 +190,7 @@ void QMPDClient::opaqueResizeChanged(bool a) {
  * either the main window or the tray icon. So, if the wheelEvents
  * position is outside the mainwindow frame, it must be the tray icon.
  */
-#ifndef Q_WS_X11
+#ifndef HAVE_X11
 bool QMPDClient::eventFilter(QObject *watched, QEvent *event) {
 	if (event->type() == QEvent::Wheel) {
 		QWheelEvent *e = static_cast<QWheelEvent*>(event);
